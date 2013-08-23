@@ -1,0 +1,43 @@
+@(indexForm: Form[Index])
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Start the Holmes Motors Window Sticker Printing Application") {
+	<div class="wrapper">
+		<div class="left"></div>
+		<div class="center"><span>
+			<center><img src=@routes.Assets.at("images/HolmesMotorsLogo.jpg")/></center>
+			<h1><center>Start the Holmes Motors Window Sticker Printing Application</center></h1>
+
+
+			<center>
+                @helper.form(action = routes.Application.loadTodays()) {
+                <button type="submit" name="submitButton" class="btn btn-primary" value="LoadNew">Load Today's New Inventory Items</button>
+                }
+
+            </center>
+
+
+
+			<center>
+                @helper.form(action = routes.Application.createNew()) {
+
+                <button type="submit" name="submitButton" class="btn btn-primary" value="CreateNew">Create New Inventory and Print Sticker</button>
+                }
+                </center>
+            @helper.form(action = routes.Application.viewAll()) {
+			<center><button type="submit" name="submitButton" class="btn btn-primary" value="ViewAll">View All Inventory</button></center>
+            }
+
+			@*<center><button type="submit" name="submitButton" class="btn btn-primary" value="PrintAll">Print All Stickers For New Inventory</button></center>*@
+		</span>
+
+
+
+        </div>
+
+
+   		<div class="right"></div>
+	</div>
+
+}

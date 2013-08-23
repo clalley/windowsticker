@@ -1,0 +1,47 @@
+
+
+@media screen, print {
+    .column-holder {
+        display: table;
+        margin: 0 auto;
+        max-width: 100%;
+    }
+
+    .variable-column {
+        display: inline-block;
+
+    }
+
+    .stick-holder {
+        width: 500px;
+        height: 700px;
+        background-color: #EEAA1F;
+        padding: 30px;
+    }
+
+    .stick-upper {
+        display: table;
+        width: 440px;
+        height: 300px;
+        margin: 0px 30px 30px 30px;
+        background-color: #018445;
+    }
+
+    .stick-bottom {
+        width: 440px;
+        height: 300px;
+        margin: 0px 30px 30px 30px;
+        background-color: #018445;
+    }
+
+    .upper-left {
+        width: 200px;
+        height: 200px;
+    }
+    .upper-right {
+        background-color: #FFFFFF;
+        width: 200px;
+        height: 200px;
+    }
+}
+

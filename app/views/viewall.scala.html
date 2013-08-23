@@ -1,0 +1,63 @@
+@(inventoryList: List[Inventory])
+
+    @import helper._
+
+    @header(key: String, title: String) = {
+        <th>
+        @title
+        </th>
+    }
+
+    @main("Start the Holmes Motors Window Sticker Printing Application") {
+        @form(routes.Application.viewAll()) {
+            <div>
+            @if(inventoryList.size() == 0) {
+
+                <div class="well">
+                    <em>Nothing to display</em>
+                </div>
+
+            } else {
+
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <td>dealer_id</td>
+                            <td>stock</td><td>year</td><td>make</td><td>model</td><td>vin</td><td>mileage</td><td>retailprice</td>
+                            <td>color</td><td>transmission</td>
+                            <td>options</td><td>bodytype</td><td>engine</td><td>location</td><td>Class</td>
+                        </tr>
+                    </thead>
+                    <tbody>
+
+                    @for(inv <- inventoryList) {
+                        <tr>
+                            <td>@inv.dealerId</td>
+                            <td>@inv.stock</td>
+                            <td>@inv.year</td>
+                            <td>@inv.make</td>
+                            <td>@inv.model</td>
+                            <td>@inv.vin</td>
+                            <td>@inv.mileage</td>
+                            <td>@inv.retailprice</td>
+                            <td>@inv.color </td>
+                            <td> @inv.transmission </td>
+                            <td> @inv.options </td>
+                            <td> @inv.bodytype </td>
+                            <td> @inv.engine </td>
+                            <td> @inv.location </td>
+                            <td>@inv.vclass</td>
+                            @*<td>*@
+                                @*<a href="@routes.Application.printOne(inv.id)">@inv.bodytype</a>*@
+                            @*</td>*@
+                        </tr>
+                    }
+
+                    </tbody>
+                </table>
+            </div>
+        }
+        }
+    }
+
+

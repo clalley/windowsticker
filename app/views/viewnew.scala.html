@@ -1,0 +1,16 @@
+@(viewNewForm: Form[ViewNew])
+@import helper._
+@import helper.twitterBootstrap._
+
+@main("Start the Holmes Motors Window Sticker Printing Application") {
+	<div class="wrapper">
+		<div class="left"></div>
+		<div class="center"><span>
+			<center><img src=@routes.Assets.at("images/HolmesMotorsLogo.jpg")/></center>
+			<h1><center>Displaying Today's New Inventory that need window stickers printed.....</center></h1>
+			@helper.form(action = routes.Application.viewNew()) {
+		</span></div>
+   		<div class="right"></div>
+	</div>
+	}
+}

@@ -1,0 +1,32 @@
+@(createNewForm: Form[CreateNew])
+
+    @import helper._
+    @import helper.twitterBootstrap._
+
+    @main("Create new vehicle in inventory and print sticker.") {
+        @form(routes.Application.createNew()) {
+            <div class="wrapper">
+                <div class="left"></div>
+                <div class="center" style="background-color: #FFDDEE">
+                    <span>
+                    <center><img src=@routes.Assets.at("images/HolmesMotorsLogo.jpg")/>
+                        <h1>Create new vehicle in inventory and print sticker.</center></h1>
+                    @inputText(createNewForm("year"), '_label -> "Year")
+                    @inputText(createNewForm("make"), '_label -> "Make")
+                    @inputText(createNewForm("model"), '_label -> "Model")
+                    @inputText(createNewForm("vin"), '_label -> "VIN")
+                    @inputText(createNewForm("miles"), '_label -> "Mileage")
+                    @textarea(createNewForm("integrityplan"), '_label -> "Integrity Plan")
+                    @inputText(createNewForm("downpayment"), '_label -> "Down Payment Amount")
+                    @inputText(createNewForm("youpay"), '_label -> "Bi-weekly payment amount")
+                    @inputText(createNewForm("interestrate"), '_label -> "Interest Rate")
+                    @textarea(createNewForm("notes"), '_label -> "Notes")
+                    <button type="submit" name="submitButton" class="btn btn-primary" value="Save">Save</button>
+                    </center>
+                    </span>
+                </div>
+                <div class="right"></div>
+            </div>
+        }
+    }
+	

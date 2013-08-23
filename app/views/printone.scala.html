@@ -1,0 +1,41 @@
+@(inv: Inventory)
+
+    @import helper._
+    @import helper.twitterBootstrap._
+
+    @main("Start the Holmes Motors Window Sticker Printing Application") {
+        <div class="wrapper">
+            <div class="left"></div>
+            <div class="center">
+                <span>
+                    <center><img src=@routes.Assets.at("images/HolmesMotorsLogo.jpg")/></center>
+                    <h1><center>Window Sticker Printing for.....</center></h1>
+                </span>
+
+                <div class="stick-holder">
+                    <div class="content column-holder stick-upper">
+                        <div class="variable-column upper-left">
+                            <div style="background-color: #FFFFFF; ">
+                                <img src="@routes.Assets.at("images/HolmesLogo.png")">
+                            </div>
+                            <div>
+
+                            </div>
+                        </div>
+                        <div class="variable-column upper-right">
+b
+                        </div>
+                    </div>
+                    <div style="height: 30px; font-size: 16px;">
+                        www.holmesmotors.com 2228-392-4054
+                    </div>
+                    <div class="content stick-bottom">
+                        <img src=@routes.Assets.at("images/HolmesLogo.png")/>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+    }
