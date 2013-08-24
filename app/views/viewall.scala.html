@@ -26,6 +26,11 @@
                             <td>stock</td><td>year</td><td>make</td><td>model</td><td>vin</td><td>mileage</td><td>retailprice</td>
                             <td>color</td><td>transmission</td>
                             <td>options</td><td>bodytype</td><td>engine</td><td>location</td><td>Class</td>
+                            @if(session.get("name") == "manager") {
+                                <td></td>
+                            } else {
+                                <td></td>
+                            }
                         </tr>
                     </thead>
                     <tbody>
@@ -46,7 +51,13 @@
                             <td> @inv.bodytype </td>
                             <td> @inv.engine </td>
                             <td> @inv.location </td>
+
                             <td>@inv.vclass</td>
+                            @if(session.get("name") == "manager") {
+                                <td></td>
+                            } else {
+                                <td></td>
+                            }
                             @*<td>*@
                                 @*<a href="@routes.Application.printOne(inv.id)">@inv.bodytype</a>*@
                             @*</td>*@

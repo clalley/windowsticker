@@ -37,7 +37,8 @@ public class DataLoader {
     static final String BODYTYPE = "bodytype";
 
     public static void load() {
-        String csvFile = "I:\\WorkExt\\clalleyvw\\docs\\Inventory.txt";
+        //String csvFile = "I:\\WorkExt\\clalleyvw\\docs\\Inventory.txt";
+        String csvFile = "C:\\Users\\calley\\Documents\\FromRick\\Inventory.txt";
         BufferedReader br = null;
         String line = "";
         String cvsSplitBy = ",";

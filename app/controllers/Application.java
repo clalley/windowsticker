@@ -9,6 +9,7 @@ import models.LoadTodays;
 import models.PrintOne;
 import models.PrintTodays;
 import models.CreateNew;
+import models.User;
 import models.ViewAll;
 import models.ViewNew;
 import play.*;
@@ -87,20 +88,21 @@ public class Application extends Controller {
 
 
     public static Result login() {
-        return ok(login.render(Form.form(Login.class)));
+        return ok(login.render(Form.form(models.User.class)));
     }
 
 
     public static Result authenticate() {
 
-        Form<Login> loginForm = Form.form(Login.class).bindFromRequest();
+        Form<models.User> loginForm = Form.form(User.class).bindFromRequest();
         System.out.println("Rich:" + loginForm);
-
+        User user = loginForm.get();
+        System.out.println("user: " + user);
         if (loginForm.hasErrors()) {
             return badRequest(login.render(loginForm));
         } else {
             session().clear();
-            session("email", loginForm.data().get("email"));
+            session("name", loginForm.data().get("name"));
             System.out.println("Rich:" + loginForm.data().get("email") + ", pass: " + loginForm.data().get("password"));
             return redirect(routes.Application.index()
             );
@@ -113,14 +115,6 @@ public class Application extends Controller {
 //        }
 //        return null;
 //    }
-
-
-    public static class Login {
-
-        public String email;
-        public String password;
-
-    }
 
 
     public static Result logout() {
